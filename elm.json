@@ -3,7 +3,7 @@
     "name": "ursi/elm-html-conditional",
     "summary": "Makes it easy to conditionally add HTML and CSS",
     "license": "BSD-3-Clause",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "exposed-modules": [
         "Html.Conditional",
         "Html.Attributes.Conditional",
