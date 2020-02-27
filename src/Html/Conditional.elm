@@ -1,25 +1,17 @@
 module Html.Conditional exposing (if_, maybeMap, nothing)
 
 import Html exposing (Html, text)
+import Html.Conditional.Internal as I
 
 
 if_ : Bool -> (Bool -> Html msg) -> Html msg
-if_ condition toHtml =
-    if condition then
-        toHtml condition
-
-    else
-        nothing
+if_ =
+    I.if_ nothing
 
 
 maybeMap : (a -> Html msg) -> Maybe a -> Html msg
-maybeMap toHtml maybeValue =
-    case maybeValue of
-        Just a ->
-            toHtml a
-
-        Nothing ->
-            nothing
+maybeMap =
+    I.maybeMap nothing
 
 
 nothing : Html msg
