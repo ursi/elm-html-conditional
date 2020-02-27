@@ -1,4 +1,4 @@
-module Html.Conditional.Internal exposing (if_, maybeMap)
+module Html.Conditional.Internal exposing (ifThenMaybeMap, if_, maybeMap)
 
 
 if_ : a -> Bool -> (Bool -> a) -> a
@@ -18,3 +18,17 @@ maybeMap nothing toValue maybeValue =
 
         Nothing ->
             nothing
+
+
+ifThenMaybeMap : a -> Bool -> (b -> a) -> Maybe b -> a
+ifThenMaybeMap nothing condition toValue maybeValue =
+    if condition then
+        case maybeValue of
+            Just a ->
+                toValue a
+
+            Nothing ->
+                nothing
+
+    else
+        nothing

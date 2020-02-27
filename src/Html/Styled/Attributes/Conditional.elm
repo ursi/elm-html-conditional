@@ -1,4 +1,9 @@
-module Html.Styled.Attributes.Conditional exposing (if_, maybeMap, nothing)
+module Html.Styled.Attributes.Conditional exposing
+    ( ifThenMaybeMap
+    , if_
+    , maybeMap
+    , nothing
+    )
 
 import Html.Conditional.Internal as I
 import Html.Styled exposing (Attribute)
@@ -13,6 +18,11 @@ if_ =
 maybeMap : (a -> Attribute msg) -> Maybe a -> Attribute msg
 maybeMap =
     I.maybeMap nothing
+
+
+ifThenMaybeMap : Bool -> (a -> Attribute msg) -> Maybe a -> Attribute msg
+ifThenMaybeMap =
+    I.ifThenMaybeMap nothing
 
 
 nothing : Attribute msg

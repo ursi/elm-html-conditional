@@ -1,4 +1,9 @@
-module Html.Styled.Conditional exposing (if_, maybeMap, nothing)
+module Html.Styled.Conditional exposing
+    ( ifThenMaybeMap
+    , if_
+    , maybeMap
+    , nothing
+    )
 
 import Html.Conditional.Internal as I
 import Html.Styled exposing (Html, text)
@@ -12,6 +17,11 @@ if_ =
 maybeMap : (a -> Html msg) -> Maybe a -> Html msg
 maybeMap =
     I.maybeMap nothing
+
+
+ifThenMaybeMap : Bool -> (a -> Html msg) -> Maybe a -> Html msg
+ifThenMaybeMap =
+    I.ifThenMaybeMap nothing
 
 
 nothing : Html msg
