@@ -1,0 +1,5 @@
+{
+    "git-dependencies": {
+        "https://github.com/ursi/elm-nothing.git": "0.1.0"
+    }
+}
